@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> //had to modify original read_line function so it skips leading whitespace
 #include <ctype.h>
 #include "read_line.h"
 
@@ -6,9 +6,9 @@ int read_line(char str[], int n) {
     int ch, i = 0;
 
     while (isspace(ch = getchar()))
-        ;  // skip initial whitespace
+        ;
 
-    if (ch != '\n' && ch != EOF) {  // only save valid character
+    if (ch != '\n' && ch != EOF) {
         str[i++] = ch;
     }
 
