@@ -1,10 +1,14 @@
-int read_line(char str[], int n) { 
+#include <stdio.h>
+#include <ctype.h>
+#include "read_line.h"
+
+int read_line(char str[], int n) {
     int ch, i = 0;
 
     while (isspace(ch = getchar()))
-        ;  
+        ;  // skip initial whitespace
 
-    if (ch != '\n' && ch != EOF) {  
+    if (ch != '\n' && ch != EOF) {  // only save valid character
         str[i++] = ch;
     }
 
